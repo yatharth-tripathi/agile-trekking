@@ -41,12 +41,12 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-gray-900">
       <Header />
       
       {/* Hero Section with Parallax */}
       <motion.div 
-        className="relative h-[80vh] w-full overflow-hidden"
+        className="relative h-[90vh] w-full overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -57,22 +57,22 @@ export default function Home() {
           fill
           sizes="100vw"
           quality={100}
-          className="object-cover"
+          className="object-cover brightness-75"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/30 via-gray-900/50 to-gray-900" />
         <motion.div 
           className="absolute inset-0 flex flex-col items-center justify-center text-white"
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.8 }}
         >
-          <h1 className="text-6xl font-bold mb-6 text-center leading-tight">
+          <h1 className="text-7xl font-bold mb-6 text-center leading-tight">
             Adventure Awaits
             <br />
-            <span className="text-green-400">Rent Premium Gear</span>
+            <span className="text-amber-500">Rent Premium Gear</span>
           </h1>
-          <p className="text-xl mb-8 max-w-2xl text-center">
+          <p className="text-xl mb-8 max-w-2xl text-center text-gray-300">
             Quality outdoor equipment for your next adventure. Easy rentals, amazing experiences.
           </p>
           <motion.div
@@ -81,7 +81,7 @@ export default function Home() {
           >
             <Link 
               href="/catalog"
-              className="bg-green-500 text-white px-8 py-4 rounded-full hover:bg-green-600 transition-colors text-lg font-semibold"
+              className="bg-amber-500 text-gray-900 px-8 py-4 rounded-full hover:bg-amber-400 transition-colors text-lg font-semibold"
             >
               Browse Equipment
             </Link>
@@ -90,10 +90,10 @@ export default function Home() {
       </motion.div>
 
       {/* Features Section */}
-      <section className="bg-gray-50 py-20">
+      <section className="bg-gray-800/50 py-32">
         <div className="container mx-auto px-4">
           <motion.h2 
-            className="text-4xl font-bold text-center mb-16"
+            className="text-4xl font-bold text-center mb-16 text-amber-500"
             {...fadeInUp}
           >
             Why Choose Us?
@@ -106,15 +106,15 @@ export default function Home() {
             ].map((feature, index) => (
               <motion.div
                 key={index}
-                className="text-center p-6 bg-white rounded-xl shadow-lg"
+                className="text-center p-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
               >
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.desc}</p>
+                <div className="text-5xl mb-4">{feature.icon}</div>
+                <h3 className="text-xl font-semibold mb-2 text-amber-400">{feature.title}</h3>
+                <p className="text-gray-400">{feature.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -122,9 +122,9 @@ export default function Home() {
       </section>
 
       {/* Categories Section */}
-      <main className="container mx-auto px-4 py-20">
+      <main className="container mx-auto px-4 py-32">
         <motion.h2 
-          className="text-4xl font-bold text-center mb-16"
+          className="text-4xl font-bold text-center mb-16 text-amber-500"
           {...fadeInUp}
         >
           Explore Our Categories

@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Header() {
   return (
     <motion.header 
-      className="bg-white shadow-md sticky top-0 z-50"
+      className="bg-gray-900/80 backdrop-blur-md border-b border-gray-800 sticky top-0 z-50"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 100 }}
@@ -16,7 +16,7 @@ export default function Header() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Link href="/" className="text-2xl font-bold text-green-500">
+            <Link href="/" className="text-2xl font-bold text-amber-500">
               Trekkers
             </Link>
           </motion.div>
@@ -30,7 +30,7 @@ export default function Header() {
               >
                 <Link 
                   href={`/${item.toLowerCase().replace(" ", "-")}`}
-                  className="text-gray-600 hover:text-green-500"
+                  className="text-gray-300 hover:text-amber-500 transition-colors"
                 >
                   {item}
                 </Link>
@@ -44,7 +44,7 @@ export default function Header() {
           >
             <Link 
               href="/supplier-registration" 
-              className="bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600"
+              className="bg-amber-500 text-gray-900 px-6 py-2 rounded-full hover:bg-amber-400 transition-colors"
             >
               Register as Supplier
             </Link>

@@ -10,8 +10,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={geist.className}>{children}</body>
+    <html lang="en" className="dark">
+      <body className={`${geist.className} bg-gray-900 text-gray-100`}>{children}</body>
     </html>
   );
 }
